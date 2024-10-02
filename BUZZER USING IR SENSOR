@@ -1,0 +1,26 @@
+// C++ code
+//
+int pin_led = 6;
+int pin_ir = 5;
+int pin_buzz = 7;
+void setup()
+{
+  pinMode(pin_led, OUTPUT);
+  pinMode(pin_buzz,OUTPUT);
+  pinMode(pin_ir,INPUT);
+}
+
+void loop()
+{
+ if(digitalRead(pin_ir)==1)
+ {
+   digitalWrite(pin_led,HIGH);
+   tone(pin_buzz,1000);
+ }
+ else
+ {
+   digitalWrite(pin_led,LOW);
+   noTone(pin_buzz);
+ }
+  delay(1000);
+}
